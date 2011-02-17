@@ -1,0 +1,270 @@
+<HTML>
+<HEAD>
+	<META NAME="GENERATOR" CONTENT="Microsoft Visual Studio">
+	<META NAME="AUTHOR" CONTENT="Art Sands">
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+	<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+	<LINK id="WebviewStyles" rel="stylesheet" href="resources/webview.css" type="text/css">
+	<script id="LayoutScript" language="JScript" src="resources/layout.js"></script>
+	<script id="JSLib" language="JScript" src="resources/jslib.js"></script>
+</HEAD>
+
+<BODY scroll="no">
+	<script id="VBSInits" language="VBScript">
+		'****** ->	THIS SECTION SHOULD BE INSIDE THE HTT FILE
+		Option Explicit
+		Dim oShell, oFSO
+		Set oShell = CreateObject( "Shell.Application" )
+		Set oFSO = CreateObject( "Scripting.FileSystemObject" )
+		Dim g_TemplateDir, g_ThisDirName, g_ThisDirPath, g_DesktopDir, g_ResourceDir
+		
+		g_TemplateDir		= "%TEMPLATEDIR%"
+		g_ThisDirName		= "%THISDIRNAME%"
+		g_ThisDirPath		= "%THISDIRPATH%"
+		g_ResourceDir		= g_TemplateDir & "\Blue\resources"
+	</script>
+	<script id="JSInits" language="JScript" src="resources/init.js"></script>
+	<script id="JSOptions" language="JScript" src="resources/opt.js"></script>
+	<script id="WebviewScript" language="JScript" src="resources/webview.js"></script>
+	<div id="Panel">
+		<div id="PanelContent" style="visibility:hidden;">
+		<!-- Begin ST -->
+			<div id="TaskPane1" class="taskpane">
+				<div id="TaskBar1" class="taskbar_normal_up">
+					<span style="z-index: 0;">System Tasks</span>
+					<img border=0 id="TaskBarImg1" class="taskbarimg" src="resources\taskbar_normal_up.png">
+					<table id="HotPerimeter1" tabIndex="-1" class="hotperimeter" border=0 cellpadding=0 cellspacing=0>
+						<tr>
+							<td id="HotArea1" title="These tasks apply to your computer.">
+								<!-- Area handles mouse events -->
+							</td>
+						</tr>
+					</table>
+				</div>
+		
+				<div id="TaskBox1" class="taskbox" style="height:70;padding-top:5;">
+					<table id="TaskContainer1a" style="display:none;" cellpadding="1" cellspacing="2" border="0">					
+						<!-- Eject CD -->
+						<tr id="BlockEjectCD" style="display:none;"><td class="taskcell" title="Ejects the compact disc from the selected CD Drive." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" >
+								<a tabIndex="-1" id="task_Search" class="task" href="javascript:DoSystemTask('ejectcd');" onfocus="WaitStatus();return true;"><img id="EjectCDIco" src="resources/taskico/ejectcdico.gif"><span id="EjectText" class="tasktext">Eject Compact Disc</span></a>
+						</td></tr>
+						<!-- Cleanup Drive -->
+						<tr id="BlockCleanupDrive"><td class="taskcell" title="Cleans up temporary and old unrequired files on the selected drive." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" >
+								<a tabIndex="-1" id="task_CleanupDrive" class="task" href="javascript:DoSystemTask('cleanupdrive');" onfocus="WaitStatus();return true;"><img id="RenameIco" src="resources/taskico/cleanupico.gif"><span id="CleanUpText" class="tasktext">Cleanup Drive</span></a>
+						</td></tr>
+						<!-- View Properties -->
+						<tr><td class="taskcell" title="Shows the properties for the selected drive." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" >
+								<a tabIndex="-1" id="task_ViewProperties" class="task" href="javascript:DoItemTask('properties');" onfocus="WaitStatus();return true;"><img id="ViewPropertiesIco" src="resources/taskico/propertiesico.gif"><span id="ViewPropertiesText" class="tasktext">View Properties</span></a>
+						</td></tr>
+						<!-- Command Prompt -->
+						<tr><td class="taskcell" title="Opens up a command window for the selected drive." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" >
+								<a tabIndex="-1" id="task_CommandPrompt" class="task" href="javascript:DoSpecialTask('commandprompthere');" onfocus="WaitStatus();return true;"><img id="CommandPromptIco" src="resources/taskico/cmdpromptico.gif"><span id="CommandPromptText" class="tasktext">Command Prompt</span></a>
+						</td></tr>
+					</table>
+					<table id="TaskContainer1b" cellpadding="1" cellspacing="2" border="0">					
+						<!-- System Information -->
+						<tr><td class="taskcell" title="Shows the system information for your computer." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" >
+								<a tabIndex="-1" id="task_SystemInformation" class="task" href="javascript:DoSystemTask('systeminfo');" onfocus="WaitStatus();return true;"><img id="SystemInfoIco" src="resources/taskico/sysinfoico.gif"><span id="SystemInformationText" class="tasktext">System Information</span></a>
+						</td></tr>
+						<!-- Add or Remove Programs -->
+						<tr><td class="taskcell" title="Allows you to add new programs, or remove those already installed." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" >
+								<a tabIndex="-1" id="task_AddRemovePrograms" class="task" href="javascript:DoSystemTask('addremoveprograms');" onfocus="WaitStatus();return true;"><img id="AddRemoveIco" src="resources/taskico/addremoveico.gif"><span id="AddRemoveText" class="tasktext">Add/Remove Programs</span></a>
+						</td></tr>
+						<!-- Display Properties -->
+						<tr><td class="taskcell" title="Shows the display properties for your computer." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" >
+								<a tabIndex="-1" id="task_DisplayProperties" class="task" href="javascript:DoSystemTask('displayproperties');" onfocus="WaitStatus();return true;"><img id="DisplayPropertiesIco" src="resources/taskico/desktoppropertiesico.gif"><span id="DisplayPropertiesText" class="tasktext">Display Properties</span></a>
+						</td></tr>
+					</table>
+
+				</div>
+			</div>
+		<!-- End FAFT -->
+		
+		<!-- Begin OP -->
+			<div id="TaskPane2" class="taskpane">
+				<div id="TaskBar2" class="taskbar_normal_up">
+					Other Places
+					<img border=0 id="TaskBarImg2" class="taskbarimg" src="resources\taskbar_normal_up.png">
+					<table id="HotPerimeter2" tabIndex="-1" class="hotperimeter" border=0 cellpadding=0 cellspacing=0>
+						<tr>
+							<td id="HotArea2" title="These links open other folders and take you quickly to useful places. (Also, do try a right-click and then a left-click.)">
+								<!-- Area handles mouse events -->
+							</td>
+						</tr>
+					</table>
+				</div>
+		
+				<div id="TaskBox2" class="taskbox" style="height:144px;">
+					<table id="TaskContainer2a" cellpadding="1" cellspacing="2" border="0">					
+						<tr><td class="taskcell" title="Goes up one level in the folder hierarchy." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_UpOneLevel" class="task" href="" onfocus="WaitStatus();return true;"><img id="UpOneLevelIco" src="resources/opico/folderico.gif"><span id="UpOneLevelText" class="tasktext">Up One Level</span></a></td></tr>
+						<tr><td class="taskcell" title="Contains letters, reports, and other documents and files." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_MyDocuments" class="task" href="file:///::{450D8FBA-AD25-11D0-98A8-0800361B1103}" onfocus="WaitStatus();return true;"><img src="resources/opico/mydocsico.gif"><span class="tasktext">My Documents</span></a></td></tr>
+						<tr><td class="taskcell" title="Shows the disk drives and hardware connected to this computer." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_MyComputer" class="task" href="file:///::{20D04FE0-3AEA-1069-A2D8-08002B30309D}" onfocus="WaitStatus();return true;"><img src="resources/opico/mycompico.gif"><span class="tasktext">My Computer</span></a></td></tr>
+						<tr><td class="taskcell" title="Displays the computers on your network." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_MyNetworkPlaces" class="task" href="file:///::{208D2C60-3AEA-1069-A2D7-08002B30309D}" onfocus="WaitStatus();return true;"><img src="resources/opico/mynetplacesico.gif"><span class="tasktext">My Network Places</span></a></td></tr>
+						<tr><td class="taskcell" title="Provides options for you to customize the appearance and functionality of your computer." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_ControlPanel" class="task" href="file:///::{20D04FE0-3AEA-1069-A2D8-08002B30309D}/::{21EC2020-3AEA-1069-A2DD-08002B30309D}" onfocus="WaitStatus();return true;"><img src="resources/opico/cpico.gif"><span class="tasktext">Control Panel</span></a></td></tr>
+						<tr><td class="taskcell" title="Stores deleted items that you can permanently remove or restore. Empties the Recycle Bin if you right-click." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_RecycleBin" class="task" href="file:///::{645FF040-5081-101B-9F08-00AA002F954E}" oncontextmenu="DoSystemTask('emptyrecyclebin');" onfocus="WaitStatus();return true;"><img src="resources/opico/binico.gif"><span class="tasktext">Recycle Bin</span></a></td></tr>
+					</table>
+					<table id="TaskContainer2b" cellpadding="1" cellspacing="2" border="0" style="display:none;">					
+						<tr><td class="taskcell" title="Shows the files, folders, program shortcuts, and other items on the desktop." onmouseover="hEvent_TaskCell_MouseOver( this );return true;"><a tabIndex="-1" id="task_Desktop" class="task" href="javascript:oWSHShell.SendKeys('%{F4}');oShell.Open(constant.ssfDESKTOP);" oncontextmenu="oShell.Open(constant.ssfDESKTOPDIRECTORY)" onfocus="WaitStatus();return true;"><img src="resources/opico/desktopico.gif"><span class="tasktext">Desktop</span></a></td></tr>
+						<tr><td class="taskcell" title="Contains digital music files." onmouseover="hEvent_TaskCell_MouseOver( this );return true;"><a tabIndex="-1" id="task_MyMusic" class="task" href="file:///::{450D8FBA-AD25-11D0-98A8-0800361B1103}/My Music" onfocus="WaitStatus();return true;"><img src="resources/opico/mymusicico.gif"><span class="tasktext">My Music</span></a></td></tr>
+						<tr><td class="taskcell" title="Contains digital photos, images, and graphic files." onmouseover="hEvent_TaskCell_MouseOver( this );return true;"  ><a tabIndex="-1" id="task_MyPictures" class="task" href="file:///::{450D8FBA-AD25-11D0-98A8-0800361B1103}/My Pictures" onfocus="WaitStatus();return true;"><img src="resources/opico/mypicturesico.gif"><span class="tasktext">My Pictures</span></a></td></tr>
+						<tr><td class="taskcell" title="Contains digital movie files." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_MyVideos" class="task" href="file:///::{450D8FBA-AD25-11D0-98A8-0800361B1103}/My Videos" onfocus="WaitStatus();return true;"><img src="resources/opico/myvideosico.gif"><span class="tasktext">My Videos</span></a></td></tr>
+						<tr><td class="taskcell" title="Connects your computer to shared information on other computers using a modem." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_DUN" class="task" href="file:///::{20D04FE0-3AEA-1069-A2D8-08002B30309D}/::{992CFFA0-F557-101A-88EC-00DD010CCC48}" onfocus="WaitStatus();return true;"><img src="resources/opico/dunico.gif"><span class="tasktext">Dial-Up Networking</span></a></td></tr>
+						<tr><td class="taskcell" title="Adds, removes, and changes settings for printers." onmouseover="hEvent_TaskCell_MouseOver( this );return true;" ><a tabIndex="-1" id="task_Printers" class="task" href="file:///::{20D04FE0-3AEA-1069-A2D8-08002B30309D}/::{2227A280-3AEA-1069-A2DE-08002B30309D}" onfocus="WaitStatus();return true;"><img src="resources/opico/printersico.gif"><span class="tasktext">Printers</span></a></td></tr>
+					</table>
+				</div>
+			</div>
+		<!-- End OP -->
+
+		<!-- Begin D -->
+			<div id="TaskPane3" class="taskpane">
+				<div id="TaskBar3" class="taskbar_normal_up">
+					Details
+					<img border=0 id="TaskBarImg3" class="taskbarimg" src="resources\taskbar_normal_up.png">
+					<table id="HotPerimeter3" tabIndex="-1" class="hotperimeter" border=0 cellpadding=0 cellspacing=0>
+						<tr>
+							<td id="HotArea3" title="This section displays the size, file type, and other information about a selected item.">
+								<!-- Area handles mouse events -->
+							</td>
+						</tr>
+					</table>
+				</div>
+		
+				<div id="TaskBox3" class="taskbox" style="padding-top:10px;padding-bottom:10px;">
+					<div id="ItemPreview" style="padding-bottom:7px;"><!--style="display: none;"-->
+						<!-- Thumbnail Viewer Control -->
+							<object id=Preview98 classid="clsid:1D2B4F40-1F10-11D1-9E88-00C04FDCAB92" style="display:none;"></object>
+							<!--object id=PreviewMe classid="clsid:50F16B26-467E-11D1-8271-00C04FC3183B" style="display:none;"></object-->
+						<!-- Microsoft Windows Media Player 6.4 Control --> 
+							<object id="oWMPlayer6" border="0" tabIndex="-1" style="margin-left:10;width:150;height:150;" classid="CLSID:22D6f312-B0F6-11D0-94AB-0080C74C7E95">
+								<PARAM NAME="AutoStart" VALUE="false">
+								<PARAM name="ShowControls" value="false">
+								<PARAM Name="ClipControls" value="false">
+								<PARAM Name="AutoRewind" Value="true">
+								<PARAM Name="Volume" Value="0">
+								<PARAM Name="AllowChangeDisplaySize" value="true">
+								<PARAM Name="AnimationAtStart" Value="true">
+								<PARAM Name="EnableFullScreenControls" value="false">
+							</object>
+					</div>
+					<div id="ItemName" style="font-weight:bold;"><nobr>%THISDIRNAME%</nobr></div> <!-- position:absolute;clip:rect(auto, 170, auto, auto); br-->
+					<div id="ItemType"></div>
+					<div id="ItemVolumeLabel" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemFileSystem" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemFreeSpace" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemTotalSize" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemImageDimensions" style="display: none;"></div>
+					<div id="ItemMediaDuration" style="display: none;padding-top:7px;"></div>
+					<div id="ItemMediaTitle" style="display: none;padding-top:7px;"></div>
+					<div id="ItemMediaArtist" style="display: none;padding-top:7px;"></div>
+					<div id="ItemMediaAlbum" style="display: none;padding-top:7px;"></div>
+					<div id="ItemFileVersion" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemDateModified" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemAttributes" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemSize" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemTips" style="display: none;"></div>
+					<div id="ItemFolderContents" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemList" style="display: none;padding-top: 7px;"></div>
+					<div id="ItemZipCount" style="display:none;padding-top:7px;"></div>
+					<div id="ItemZipComment" style="display:none;padding-top:7px;"></div>
+
+				</div>
+			</div>
+		<!-- End D -->
+
+
+		</div>
+	</div>
+	
+	<div id="Toolbar" style="visibility:hidden;margin-right:0;position:absolute; top:0; left: 209; width: 100%;background-color: threedlightshadow"><nobr>
+		<img id="ToolbarBack" src="resources/toolbar/toolback.gif" style="position:absolute;z-index:-2;" width="680" height="30">
+		
+		<span id="ToolsGroup1" title="Tasks specific to selected items." class="ToolsGroup">
+			<span id="ToolProperties" title="View Properties" class="ToolbarButton" onclick="DoItemTask('properties');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/propertiesico.gif">
+			</span>
+			<span id="ToolShortcut" title="Create Shortcut--Create Shortcut on Desktop" class="ToolbarButton" onclick="DoItemTask('shortcut');" oncontextmenu="DoItemTask('desktopshortcut')"  onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/shortcutico.gif">
+			</span>
+			<span id="ToolSelectAll" title="Select All--Invert Selection" class="ToolbarButton" onclick="DoItemTask('selectall');" oncontextmenu="DoItemTask('invertselection')" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/selectinvertico.gif">
+			</span>
+			<!--span id="ToolCommandPromptHere" title="Command Prompt" class="ToolbarButton" onclick="DoSpecialTask('commandprompthere');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/cmdpromptico.gif">
+			</span-->
+
+		</span>
+		<span id="ToolsGroup2" class="ToolsGroup">	
+			<span id="ToolRefresh" title="Refresh" class="ToolbarButton" onclick="DoItemTask('refresh');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/refreshico.gif">
+			</span>
+			<span id="ToolExplore" title="Explore Folder--Folders Pane" class="ToolbarButton" onclick="DoSpecialTask('explore');" oncontextmenu="DoSpecialTask('folderspane')" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/exploreico.gif">
+			</span>
+			<!--span id="ToolCustomizeThisFolder" title="Customize this Folder..." class="ToolbarButton" onclick="DoSpecialTask('customizethisfolder');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/customizeico.gif">
+			</span-->
+			<span id="ToolFolderOptions" title="Folder Options" class="ToolbarButton" onclick="DoSystemTask('folderoptions');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/folderoptionsico.gif">
+			</span>
+			<span id="ToolFullScreen" title="Full Screen" class="ToolbarButton" onclick="DoSystemTask('fullscreen');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/fullscreenico.gif">
+			</span>
+
+		</span>
+		<span id="ToolsGroup3" title="Special Tasks" class="ToolsGroup">
+			<!--span id="ToolNewTextDocument" title="New Text Document" class="ToolbarButton" onclick="DoSpecialTask('newtextfile');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">
+				<img src="resources/taskico/newtextfileico.gif">
+			</span-->
+			<span id="ToolNotepad" title="Notepad" class="ToolbarButton" onclick="DoSpecialTask('notepad');" oncontextmenu="DoSpecialTask('textpad');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/notepadico.gif">
+			</span>
+			<span id="ToolWordPad" title="WordPad" class="ToolbarButton" onclick="DoSpecialTask('wordpad');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/wordpadico.gif">
+			</span>
+			<span id="ToolMSPaint" title="Paint" class="ToolbarButton" onclick="DoSpecialTask('mspaint');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">
+				<img src="resources/taskico/mspaintico.gif">
+			</span>
+			<span id="ToolWMPlayer" title="Windows Media Player--Media Player 2" class="ToolbarButton" onclick="DoSpecialTask('wmplayer');" oncontextmenu="DoSpecialTask('mplayer2');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">
+				<img src="resources/taskico/wmplayerico.gif">
+			</span>
+			<!--span id="ToolWinamp2" title="Winamp" class="ToolbarButton" onclick="DoSpecialTask('playinwinamp');" oncontextmenu="DoSpecialTask('enqueueinwinamp');" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">
+				<img src="resources/taskico/winampico.gif">
+			</span>
+			<span id="ToolCompileOrRunJava" title="Compiles/Runs Java--Verbose Compilation" class="ToolbarButton" onclick="DoSpecialTask('cupofjava');" oncontextmenu="try{CompileJavaFile(FileList.SelectedItems().Item(0), false);}catch(e){}"  onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/javaico.gif">
+			</span>
+			<span id="ToolCompressedFolders" title="Compressed Folders" class="ToolbarButton" onclick="DoSpecialTask('explore');" oncontextmenu="DoSpecialTask('folderspane')" onmouseover="hEvent_ToolButton_MouseOver( this );"  onmouseout="hEvent_ToolButton_MouseOver( this );">	
+				<img src="resources/taskico/compressedfoldersico.gif">
+			</span-->
+
+		</span>
+		<!--select class="SelectItemsType" style="color:black;background-color:rgb(211, 223, 245);border:1px solid silver;width:200;">
+			<option selected>Choose selection item type</option>
+			<option>-----------</option>
+			<option>Specify...</option>
+			<option>Files</option>
+			<option>Folders</option>
+			<option>Compressed</option>
+			<option>-----------</option>
+			<option>Images</option>
+			<option>Movies</option>
+			<option>Music</option>
+			<option>Text/Rich Text</option>
+			<option>Web</option>
+			
+		</select-->
+	</nobr></div>
+	
+	<!-- Standard FileList Control -->	<!-- webbot bot="HTMLMarkup" startspan --><object id="FileList" border="0" tabindex="1" classid="clsid:1820FED0-473E-11D0-A96C-00C04FD705A2"></object><!-- webbot bot="HTMLMarkup" endspan -->
+	
+
+
+	<!--iframe id="ContextMenu1" class="ContextMenuFrame" src="resources/ContextMenu1.htm" style="position:absolute;top:20; left:20;" frameBorder=no scrolling=no height=396 width=227>
+	</iframe-->
+
+	<script id="AnimationScript" language="JScript" src="resources/hAnim.js" DEFER></script>
+	<script id="EventsScript" language="JScript" src="resources/hEvent.js" DEFER></script>
+	<script id="TasksScript" language="JScript" src="resources/tasks.js" DEFER></script>
+</BODY>
+
+</HTML>

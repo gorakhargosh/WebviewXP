@@ -1,0 +1,281 @@
+REGEDIT4
+
+;Group - AutoPlay 
+;--------------------------------------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\AutoPlay]
+"Text"="AutoPlay Options"
+"Type"="group"
+"Bitmap"="C:\\windows\\system\\shell32.dll,12"
+"HelpID"="iexplore.hlp#50041"
+
+;Set Autorun
+;--------------------------------------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\AutoPlay\Unknown]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Unknown Drives"
+"Type"="checkbox"
+"CheckedValue"=dword:00000000
+"UncheckedValue"=dword:00000001
+"ValueName"="NoDriveTypeAutoRun"
+"DefaultValue"=dword:00000000
+"HKeyRoot"=dword:80000001
+"Mask"=dword:00000001
+;"HelpID"="iexplore.hlp#50184"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\AutoPlay\RootDir]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Root Drive"
+"Type"="checkbox"
+"CheckedValue"=dword:00000000
+"UncheckedValue"=dword:00000002
+"ValueName"="NoDriveTypeAutoRun"
+"DefaultValue"=dword:0000002
+"HKeyRoot"=dword:80000001
+"Mask"=dword:00000002
+;"HelpID"="iexplore.hlp#50184"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\Autoplay\Floppy]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Floppy Disks"
+"Type"="checkbox"
+"CheckedValue"=dword:00000000
+"UncheckedValue"=dword:00000004
+"ValueName"="NoDriveTypeAutoRun"
+"DefaultValue"=dword:00000000
+"HKeyRoot"=dword:80000001
+"Mask"=dword:00000004
+;"HelpID"="iexplore.hlp#50184"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\AutoPlay\HardDrive]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Hard Drives"
+"Type"="checkbox"
+"CheckedValue"=dword:00000000
+"UncheckedValue"=dword:00000008
+"ValueName"="NoDriveTypeAutoRun"
+"DefaultValue"=dword:00000008
+"HKeyRoot"=dword:80000001
+"Mask"=dword:00000008
+;"HelpID"="iexplore.hlp#50184"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\AutoPlay\RemoteDrive]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Remote Drives"
+"Type"="checkbox"
+"CheckedValue"=dword:00000000
+"UncheckedValue"=dword:00000010
+"ValueName"="NoDriveTypeAutoRun"
+"DefaultValue"=dword:00000000
+"HKeyRoot"=dword:80000001
+"Mask"=dword:00000010
+;"HelpID"="iexplore.hlp#50184"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\AutoPlay\CDRom]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Compact Discs"
+"Type"="checkbox"
+"CheckedValue"=dword:00000000
+"UncheckedValue"=dword:00000020
+"ValueName"="NoDriveTypeAutoRun"
+"DefaultValue"=dword:00000000
+"HKeyRoot"=dword:80000001
+"Mask"=dword:00000020
+;"HelpID"="iexplore.hlp#50184"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\AutoPlay\RAMDrive]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="RAM Drives"
+"Type"="checkbox"
+"CheckedValue"=dword:00000000
+"UncheckedValue"=dword:00000040
+"ValueName"="NoDriveTypeAutoRun"
+"DefaultValue"=dword:00000040
+"HKeyRoot"=dword:80000001
+"Mask"=dword:00000040
+;"HelpID"="iexplore.hlp#50184"
+
+
+;Group Windows Explorer.
+;--------------------------------------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\Explorer]
+"Text"="Windows Explorer"
+"Type"="group"
+"Bitmap"="C:\\Windows\\System\\Shell32.dll,46"
+"HelpID"="iexplore.hlp#50041"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\Explorer\UnloadDLL]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Explorer"
+"Text"="Unload unused shell extensions immediately"
+"Type"="checkbox"
+"CheckedValue"="1"
+"UncheckedValue"="0"
+"ValueName"="AlwaysUnloadDLL"
+"DefaultValue"="0"
+"HKeyRoot"=dword:80000002
+;"HelpID"="iexplore.hlp#50048"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\Explorer\DblClick]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced"
+"Text"="Detect accidental double-clicks"
+"Type"="checkbox"
+"CheckedValue"="1"
+"UncheckedValue"="0"
+"ValueName"="UseDoubleClickTimer"
+"DefaultValue"="1"
+"HKeyRoot"=dword:80000001
+;"HelpID"="iexplore.hlp#50048"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\Explorer\AUTOCOMPLETE]
+"RegPath"="SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\AutoComplete"
+"Text"="Use inline AutoComplete in integrated shell"
+"PlugUIText"="@inetcplc.dll,-4842"
+"Type"="checkbox"
+"CheckedValue"="yes"
+"UncheckedValue"="no"
+"ValueName"="Use AutoComplete"
+"DefaultValue"="yes"
+"HKeyRoot"=dword:80000001
+"HelpID"="iexplore.hlp#50539"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\Explorer\AUTORefresh]
+"RegPath"="System\\CurrentControlSet\\Control\\Update"
+"Text"="Update folders very quickly"
+"Type"="checkbox"
+"CheckedValue"=hex:00,00,00,00
+"UncheckedValue"=hex:01,00,00,00
+"ValueName"="UpdateMode"
+"DefaultValue"=hex:00,00,00,00
+"HKeyRoot"=dword:80000002
+;"HelpID"="iexplore.hlp#50539"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\Explorer\Shortcut]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Explorer"
+"Text"="Don't prefix Shortcut To... when creating new shortcuts"
+"Type"="checkbox"
+"CheckedValue"=hex:00, 00, 00, 00
+"UncheckedValue"=hex:16, 00, 00, 00
+"ValueName"="Link"
+"DefaultValue"=hex:00, 00, 00, 00
+"HKeyRoot"=dword:80000001
+;"HelpID"="iexplore.hlp#50539"
+
+;Group - StartMenu - Speed 
+;--------------------------------------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\Speed]
+"Text"="Start Menu Speed"
+"Type"="group"
+"Bitmap"="C:\\windows\\system\\shell32.dll,40"
+"HelpID"="iexplore.hlp#50041"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\Speed\Max]
+"RegPath"="Control Panel\\desktop"
+"Text"="Fastest"
+"Type"="radio"
+"CheckedValue"="0"
+"ValueName"="MenuShowDelay"
+"DefaultValue"="400"
+"HKeyRoot"=dword:80000001
+;"HelpID"="update.hlp#51104"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\Speed\Quick]
+"RegPath"="Control Panel\\desktop"
+"Text"="Fast"
+"Type"="radio"
+"CheckedValue"="150"
+"ValueName"="MenuShowDelay"
+"DefaultValue"="400"
+"HKeyRoot"=dword:80000001
+;"HelpID"="update.hlp#51104"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\Speed\Standard]
+"RegPath"="Control Panel\\desktop"
+"Text"="Default"
+"Type"="radio"
+"CheckedValue"="400"
+"ValueName"="MenuShowDelay"
+"DefaultValue"="400"
+"HKeyRoot"=dword:80000001
+;"HelpID"="update.hlp#51104"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\Speed\Slow]
+"RegPath"="Control Panel\\desktop"
+"Text"="Slow"
+"Type"="radio"
+"CheckedValue"="600"
+"ValueName"="MenuShowDelay"
+"DefaultValue"="400"
+"HKeyRoot"=dword:80000001
+;"HelpID"="update.hlp#51104"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\Speed\Slowest]
+"RegPath"="Control Panel\\desktop"
+"Text"="Click to bring up a menu"
+"Type"="radio"
+"CheckedValue"="600"
+"ValueName"="MenuShowDelay"
+"DefaultValue"="1000"
+"HKeyRoot"=dword:80000001
+;"HelpID"="update.hlp#51104"
+
+
+;Group - StartMenu - Inbuilt Menus
+;--------------------------------------------------------------------------
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\InbuiltMenus]
+"Text"="Start Menu Submenus"
+"Type"="group"
+"Bitmap"="C:\\windows\\system\\shell32.dll,20"
+"HelpID"="iexplore.hlp#50041"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\InbuiltMenus\Favourite]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Hide the Favorites submenu on the Start menu"
+"Type"="checkbox"
+"CheckedValue"=dword:00000001
+"UncheckedValue"=dword:00000000
+"DefaultValue"=dword:00000000
+"ValueName"="NoFavoritesMenu"
+"HKeyRoot"=dword:80000001
+;"HelpID"="iexplore.hlp#50107"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\InbuiltMenus\Documents]
+"Text"="Documents Menu"
+"Type"="group"
+"Bitmap"="C:\\windows\\system\\shell32.dll,21"
+"HelpID"="iexplore.hlp#50041"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\InbuiltMenus\Documents\Documents]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Hide the Documents submenu on the Start menu"
+"Type"="checkbox"
+"CheckedValue"=dword:00000001
+"UncheckedValue"=dword:00000000
+"DefaultValue"=dword:00000000
+"ValueName"="NoRecentDocsMenu"
+"HKeyRoot"=dword:80000001
+;"HelpID"="iexplore.hlp#50107"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\InbuiltMenus\Documents\DontAdd]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Do not add recent files to the Documents menu"
+"Type"="checkbox"
+"CheckedValue"=dword:00000001
+"UncheckedValue"=dword:00000000
+"DefaultValue"=dword:00000000
+"ValueName"="NoRecentDocsHistory"
+"HKeyRoot"=dword:80000001
+;"HelpID"="iexplore.hlp#50107"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\Advanced\StartMenu\InbuiltMenus\Documents\ClearDocs]
+"RegPath"="Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer"
+"Text"="Clear recent files list when user logs off"
+"Type"="checkbox"
+"CheckedValue"=dword:00000001
+"UncheckedValue"=dword:00000000
+"DefaultValue"=dword:00000000
+"ValueName"="ClearRecentDocsOnExit"
+"HKeyRoot"=dword:80000001
+;"HelpID"="iexplore.hlp#50107"

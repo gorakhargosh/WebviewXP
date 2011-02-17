@@ -1,0 +1,195 @@
+<HTML>
+<HEAD>
+	<TITLE>Blue Setup</TITLE>
+	<META NAME="GENERATOR" Content="Microsoft Visual Studio">
+	<META HTTP-EQUIV="Content-Type" content="text/html; charset=UTF-8">
+	<HTA:APPLICATION
+		ID="BlueSetupDlg"
+		applicationName="Blue Webview"
+		border="thin"
+		borderStyle="normal"
+		caption="yes"
+		icon="setup/setup.ico"
+		maximizeButton="no"
+		minimizeButton="yes"
+		showInTaskBar="yes"
+		singleInstance="yes"
+		sysMenu="yes"
+		version="1.00.0000.0"
+		windowState="normal"
+		contextMenu="no">
+	<script language="JScript" src="jslib.js"></script>
+	<script language="JScript">
+		function WindowSet()
+		{
+			var wndWidth = 600;
+			var wndHeight = 480;
+			var xPos, yPos;
+			xPos = (screen.width - wndWidth) / 2;
+			yPos = (screen.height - wndHeight) / 2;
+			window.resizeTo(wndWidth, wndHeight);
+			window.moveTo(xPos, yPos);
+		}
+
+		WindowSet();
+	</script>
+	<style>
+			body
+			{
+				scrollbar-arrow-color: RGB(178,185,212);
+				scrollbar-face-color:RGB(125,128,180);
+				scrollbar-darkshadow-color:RGB(125,128,180);
+				scrollbar-shadow-color: RGB(125,128,180);
+				scrollbar-3dlight-color:RGB(125,128,180);
+				scrollbar-track-color: RGB(125,128,180);
+			}
+			.btn
+			{
+				font-family: MS Sans Serif, Verdana, Tahoma;
+				font-size: 8pt;
+				color: RGB(178,185,212);
+				border: 1px solid RGB(178,185,212);
+				background-color: RGB(125,128,180);
+				width: 75;
+				height: 25;
+				
+			}
+			a.mi:link, a.mi:visited
+			{
+				margin-left:50;
+				width: 150;
+				height: 25;
+				padding: 10;
+				color: RGB(178,185,212);
+				text-decoration: none;
+				border: 1px solid RGB(178,185,212);
+				background-color: RGB(125,128,180);
+				cursor: default;
+				text-align:right;
+			}
+			a.mi:hover, a.mi:visited:hover
+			{
+				color: RGB(178,185,212);
+				text-decoration: none;
+				border: 1px solid RGB(113,117,166);
+				cursor: default;
+				text-align:right;
+			}
+			a.mi:active, a.mi:visited:active
+			{
+				color: RGB(178,185,212);
+				border: 1px solid RGB(113,117,166);
+				cursor:default;
+				text-align:right;				
+			}
+			#Information
+			{
+				text-align: left;
+				font-family: Tahoma;
+				font-size: 8pt;
+				vertical-align: absmiddle;
+				color: RGB(178,185,212);
+				padding: 15;
+				height: 70;
+			}
+			.chkbox
+			{
+				
+			}
+			.subchkbox
+			{
+				margin-left: 20;
+			}
+			.fldset
+			{
+				cursor:default;
+				padding:5;
+				border:1px solid silver;
+				color:RGB(113,117,166);
+				width:180;
+			}
+	</style>
+
+</HEAD>
+<BODY scroll="no" onselectstart="return false;" onload="Load();" style="height:500px;margin:0;font-family:MS Sans Serif, Verdana;font-size:8pt;cursor:default;display:none;">
+
+<div id="Main" onmouseover="Main_OnMouseOver();">
+	<div id="LeftPane" style="background-color: RGB(113,117,166);width: 200;color: RGB(178,185,212);height:90%;">
+		<div id="miContainer" style="margin-top:50;">
+		<a id="miWelcome" class="mi" tabIndex="-1" href="#">Blue Webview</a><br><br>
+		<a id="miOptions" class="mi" tabIndex="-1" href="#">Options</a><br><br>
+		<a id="miManage" class="mi" tabIndex="-1" href="#" style="visibility:hidden;">Manage Installation</a>
+		</div>
+		<div id="InfoContainer" style="margin-top:140;">
+			<img id="sep1" src="setup/images/lpsep.png" width="198" height="1">
+			<div id="Information"></div>
+			<!--img id="sep2" src="setup/images/lpsep.png" width="198" height="1"-->
+		</div>
+	</div>
+	<div id="RightPane" style="position:absolute;margin-left:200;top:0;width:390;">
+		<div id="TopRightPane" style="z-index:-1;color: RGB(200,196,176);background-color:RGB(214,210,191);background-image:url('setup/images/titleback.png');width:100%;height:50;">
+			<span id="PageTitle" style="position:absolute;right:0;top:7;font-family:Tahoma;font-size:30pt;">Options</span>
+		</div>
+		<div id="MiddleRightPane" style="padding:5,10,5,10;z-index:1;color:RGB(113,117,166);background-color:RGB(245,245,245);width:100%;height:281;overflow:auto;">
+			<div id="ContentWelcome" style="display:none;">
+				<p><b>Welcome to blue webview!</b></p>
+				<p>This webview has been designed to give Windows Explorer a facelift and make using it easier. The look and feel emulates that of a common Windows XP folder.</p>
+				<p>Additionally, note that Blue Webview is freeware and you can distribute multiple copies of webview. (See License Agreement).</p>
+				<p><b>System Requirements:</b></p>
+				<p>
+					<ul>
+						<li>Microsoft Windows 98/Me/2000 with atleast 64 MB of RAM</li>
+						<li>Windows Script Host 5.6</li>
+						<li>Microsoft Internet Explorer 5.5 (recommended 6) or higher </li>
+						<li>Microsoft Windows Media Player 7.1</li>
+						<li>Microsoft Outlook Express or Outlook 2000+.
+					</ul>
+				</p>
+			</div>
+			<div id="ContentManage" style="display:none;">
+			
+			</div>
+			<div id="ContentOptions" style="">
+				<FIELDSET style="position:absolute;top:0;" class="fldset"><LEGEND>General</LEGEND>
+					<div id="idFolderMediaTypeCheck"><input class="chkbox" tabindex=1 id="chkFolderMediaTypeCheck" type="checkbox">Detect folder type</div>
+					<div id="idFolderContents"><input class="chkbox" tabindex=2 id="chkFolderContents" type="checkbox">Display folder contents</div>
+					<div id="idItemAttributes"><input class="chkbox" tabindex=3 id="chkItemAttributes" type="checkbox">Show attributes</div>
+					<div id="idCompressedFolderInfo"><input class="chkbox" tabindex=4 id="chkCompressedFolderInfo" type="checkbox">Compressed folder information</div>
+					<div id="idSizeInBytes"><input class="chkbox" tabindex=4 id="chkSizeInBytes" type="checkbox">Show size in bytes</div>
+				</FIELDSET>
+				<FIELDSET style="position:absolute;top:0;left:200;" class="fldset"><LEGEND>File System Object</LEGEND>
+					<div id="idFSOFolderCount"><input class="chkbox" tabindex=11 id="chkFSOFolderCount" type="checkbox">Show detailed item count</div>
+					<div id="idFSODateModified"><input class="chkbox" tabindex=12 id="chkFSODateModified" type="checkbox">Easy-read modification date</div>
+					<div id="idFSOFileVersion"><input class="chkbox" tabindex=13 id="chkFSOFileVersion" type="checkbox">Show file version</div>
+					<div id="idFSOFolderSize"><input class="chkbox" tabindex=14 id="chkFSOFolderSize" type="checkbox">Show folder size</div>
+				</FIELDSET>
+				<FIELDSET style="position:absolute;top:125;" class="fldset"><LEGEND>Media</LEGEND>
+					<div id="idMediaInformation" style="display:none;"><input class="chkbox" tabindex=5 id="chkMediaInformation" type="checkbox">Show media information</div>
+					<div id="idImagePreview"><input class="chkbox" tabindex=6 id="chkImagePreview" type="checkbox">Show picture preview</div>
+						<div id="idImagePreviewSize" style="margin-left: 20;">Preview Size: <input tabindex=7 id="txtboxImagePreviewSize" type="text" style="font-family:Verdana;font-size:8pt;width:30;height:20;" disabled> px</div>
+					<div id="idVideoPreview"><input class="chkbox" tabindex=8 id="chkVideoPreview" type="checkbox">Show movie preview</div>
+						<div id="idRepeatPlayback" style="display:none;"><input class="subchkbox" tabindex=9 id="chkRepeatPlayback" type="checkbox" disabled>Repeat playback</div>
+						<div id="idControlsOnMouseOver"><input class="subchkbox" tabindex=10 id="chkControlsOnMouseOver" type="checkbox" disabled>Show controls on hover</div>
+				</FIELDSET>
+				<FIELDSET style="position:absolute;left:200;top:105;" class="fldset"><LEGEND>Miscellaneous</LEGEND>
+					<div id="idWinamp"><input class="chkbox" tabindex=15 id="chkWinamp" type="checkbox">Enable Winamp tool</div>
+				</FIELDSET>				
+			</div>
+			<div id="ContentFAQ" style="display:none;">
+			
+			</div>
+		</div>
+		<div id="BottomRightPane" style="padding:10; text-align:right;background-color:RGB(178,185,212);background-image:url('setup/images/bottomrpback.png');width:100%;height:75;">
+			<input id="BtnPrev" class="btn" type="button" value="Prev" style="display:none;">
+			<input id="BtnNext" class="btn" type="button" value="Next" style="display:none;">
+		</div>
+	</div>
+	<div id="BottomPane" style="margin:0;height:10%;padding:10;background-color: RGB(113,117,166);text-align:right;">
+		<input id="BtnOK" class="btn" type="button" value="OK">
+		<input id="BtnApply" class="btn" type="button" value="Apply"> <!-- style="display:none"-->
+		<input id="BtnCancel" tabIndex=0 class="btn" type="button" value="Cancel">
+	</div>
+</div>
+	<SCRIPT id="JSCommon" Language="JScript" Src="setup/common.js"></SCRIPT>
+</BODY>
+</HTML>

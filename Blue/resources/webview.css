@@ -1,0 +1,277 @@
+body {	
+	margin: 0; font-family: Tahoma; color: black; font-size: 8pt;	/*background-color: buttonface;*/
+/*	cursor:url('resources/cursors/arrow.ani'); */
+}
+table {
+	font-family: Tahoma; font-size: 8pt;
+}
+a:link {
+	color: #215dc6;	text-decoration: none;
+}
+a:visited {
+	color: #215dc6;	text-decoration: none;
+}
+a:hover {
+	color: #428eff;	text-decoration: underline;
+}
+img {
+	border: 0;
+}
+
+#Preview98 {
+	width: 100;
+	height: 100;
+	filter:progid:DXImageTransform.Microsoft.Chroma(Color='white');
+}
+#PreviewMe {
+	width: 100;
+	height: 100;
+}
+#oWMPlayer6
+{
+	filter:progid:DXImageTransform.Microsoft.Chroma(Color='black');
+}
+#FileList {
+	margin-left: 209px;
+	margin-top: 30px;
+	width: 100%;
+	height: 100%;
+	background-color: buttonface;
+}
+.ToolbarButton {
+	/*z-index: 3;*/
+	background-color: transparent;
+	padding: 3;
+	width: 20;
+	height: 20;
+}
+.ToolbarButton_over {
+	/*z-index: 3;*/
+	border: 1px solid rgb(0, 32, 96); /*rgb(136, 166, 225);*/
+	background-color: rgb(175, 185, 207); /*rgb(211, 223, 245);*/
+	padding: 2;
+	width: 20;
+	height: 20;
+}
+.ToolbarButton_imgover {
+	/*z-index: 3;*/
+	border: 1px solid rgb(136, 166, 225);
+	background-color: rgb(211, 223, 245);
+	padding: 2;
+	width: 20;
+	height: 20;
+}
+
+.ToolsGroup {
+	z-index: 3;
+	padding: 2, 1, 2, 1;
+	margin-left: 20;
+	height: 20;
+	border-left: 2px dotted rgb(136, 166, 225); /* buttonshadow; /*rgb(211, 223, 245);*/
+}
+.SelectItemsType {
+	margin-left:750;
+	margin-right: 5;
+	position:absolute;
+	right: 10;
+	top: 4;
+	font-family: Verdana;
+	font-size: 10pt;
+	color: buttonshadow;
+	z-index: -1;
+}
+
+/******************************************************************
+ *	This style defines the look and position of the Panel
+ ******************************************************************/
+#Panel {
+	position: absolute;
+	width: 209;
+	height: 100%;
+	background: rgb(99,117,214) url('xppanel.png') no-repeat;
+	scrollbar-arrow-color: rgb(77, 97, 133);
+	scrollbar-face-color: rgb(198, 214, 253);
+	scrollbar-darkshadow-color: rgb(140, 176, 248);
+	scrollbar-shadow-color: rgb(225, 234, 254);
+	scrollbar-3dlight-color: rgb(225, 234, 254);
+	scrollbar-track-color: rgb(249, 249, 247);
+	overflow: auto;
+}
+
+/******************************************************************
+ *	This style is necessary for the position of the Panels content.
+ *	The panels content should be only 185px wide should have a
+ *	left margin of 12px and 0px on the top.
+ ******************************************************************/
+#PanelContent {
+	position: absolute;
+	width: 185;
+	/*margin-top: 0;*/
+	margin-left: 12;
+}
+
+.spacer {
+	padding-top: 4px;
+}
+
+/******************************************************************
+ * TaskPanes and their styles
+ ******************************************************************/
+a.bar:link { color: #215dc6; text-decoration: none; }
+a.bar:visited { color: #215dc6; text-decoration: none; }
+a.bar:hover { color: #428eff; text-decoration: none; }
+a.bar:hover { color: #428eff; text-decoration: none; }
+
+#TaskBar1, #TaskBar2, #TaskBar3 {
+	z-index: 1;
+	position: absolute;
+	font-weight: bold;
+	width:185;
+	height:25;;
+	padding: 20, 4, 4, 12;
+	
+	/*	===========
+	 *	IMPORTANT!:
+	 *	===========
+	 *	The padding-top property has been set to 20px 
+	 *	to position the text inside the TaskBar tags.
+	 *	Additionally, this works to create a constant
+	 *	gap of exactly 13 pixels between TaskPanes.
+	 */
+	/* border: 1px solid black; */
+}
+.taskpane { position: absolute; }
+.taskbar_normal_up { color: rgb(33, 93, 198); }
+.taskbar_normal_up_over { color: rgb(66, 142, 255); }
+.taskbar_normal_down { color: rgb(33, 93, 198); }
+.taskbar_normal_down_over { color: rgb(66, 142, 255); }
+.taskbarimg {
+	z-index:-1;
+	position:absolute;
+	left:0;
+	top:13;
+	height:25px;
+}
+.hotperimeter {
+	z-index:1;
+	width:181;
+	height: 23;
+	padding: 4, 4, 4, 7;
+	position: absolute;
+	top:15;
+	left:2;
+	cursor: hand;
+}
+.taskbox {
+	position: absolute;
+	filter:blendtrans(duration="0.3");		/* Required preloaded for fading animations */
+	width: 185;
+	z-index: -3;
+	background-color: rgb(214, 223, 247);
+	padding: 4, 4, 4, 7;
+	border-left: 1px solid white;
+	border-right:1px solid white;
+	border-top:0px solid transparent;
+	border-bottom:1px solid white;
+}
+#InputBox
+{
+	font-family: Verdana;
+	font-size: 8pt;
+	height: 25px;
+	width: 150px;
+	position:absolute;
+	top:0;
+	left:0;
+	padding:4;
+	visibility:visible; 
+	z-index: 2;
+	border:1px solid silver;
+	background-color: white;
+	filter:progid:DXImageTransform.Microsoft.Blur(enabled=true, pixelRadius=1)
+			progid:DXImageTransform.Microsoft.MotionBlur(strength=1)
+			progid:DXImageTransform.Microsoft.Wheel(duration=4);
+}
+
+/*************TASKS**************/
+.taskcell {
+	z-index: 1;
+}
+a.task:link {
+	color: #215dc6;	text-decoration: none; cursor: hand;
+}
+a.task:visited {
+	color: #215dc6;	text-decoration: none; cursor: hand;
+}
+a.task:hover {
+	color: #428eff;	text-decoration: underline; cursor: hand;
+}
+.tasktext {
+	vertical-align:top;
+	padding: 7, 0, 7, 6;
+}
+
+
+
+#ListItem {
+	padding-left: 0px;
+	font-size:7pt;
+}
+
+
+
+
+
+.ContextMenuFrame{ 
+	position:absolute;
+	top:20;
+	left:20;
+	background-color:RGB(240,236,224);
+	font-family: "MS Sans Serif";
+	font-size: 8pt;
+	z-index: 3;
+	display: none;
+}
+.ContextMenuBorder  {
+	font-family: "MS Sans Serif";
+	font-size: 8pt;
+	border: 1px solid RGB(144,136,120);
+	width: 200;
+}
+.ContextMenuContent {
+	border-top: 1px solid RGB(255,252,248); 
+	border-bottom: 1px solid RGB(255,252,248);
+	background-color: RGB(239,237,222);
+}
+.ContextMenuTasks {
+	margin-left: 25;
+	height:auto;
+	width: 200;
+	background-color: RGB(255,252,248);
+	padding: 5, 0, 5, 10;
+	margin-right: 0;
+}
+.ContextMenuTasks div {
+	padding: 5, 0, 5, 0;
+}
+.GroupOver {
+	border-bottom: 1px solid RGB(144,136,120);
+}
+.ContextMenuIconsGroup {
+	position: absolute;
+	/*border: 1px solid silver;*/
+	left: 5;
+	width: 215;
+}
+.ContextMenuIconsGroup div {
+	/*padding: 4, 0, 4, 0;*/
+	height: 23;
+	z-index: 3;
+	/*border:1px solid silver;*/
+}
+.GroupStart {
+	padding-top: 25;
+	height: 25;
+	z-index: 3;
+	border-top:1px solid RGB(144,136,120);
+}
